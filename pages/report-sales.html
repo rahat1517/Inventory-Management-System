@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Report — InventoryPro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="brand-icon"><i class="bi bi-boxes"></i></div><div><div class="brand-name">InventoryPro</div><div class="brand-sub">Management System</div></div></div>
+  <nav class="nav-wrap">
+    <div class="nav-label">Main</div>
+    <a href="dashboard.html" class="nav-item"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <div class="nav-label">Inventory</div>
+    <a href="products.html" class="nav-item"><i class="bi bi-box-seam"></i> Products</a>
+    <a href="categories.html" class="nav-item"><i class="bi bi-tag"></i> Categories</a>
+    <a href="suppliers.html" class="nav-item"><i class="bi bi-truck"></i> Suppliers</a>
+    <div class="nav-label">Transactions</div>
+    <a href="purchases.html" class="nav-item"><i class="bi bi-cart-plus"></i> Purchases</a>
+    <a href="sales.html" class="nav-item"><i class="bi bi-receipt"></i> Sales</a>
+    <div class="nav-label">Reports</div>
+    <a href="report-sales.html" class="nav-item active"><i class="bi bi-graph-up"></i> Sales Report</a>
+    <a href="report-profit.html" class="nav-item"><i class="bi bi-currency-dollar"></i> Profit Report</a>
+    <a href="report-stock.html" class="nav-item"><i class="bi bi-bar-chart-line"></i> Stock Report</a>
+    <div class="nav-label">System</div>
+    <a href="alerts.html" class="nav-item"><i class="bi bi-bell"></i> Low Stock Alerts <span class="nav-badge">3</span></a>
+    <a href="users.html" class="nav-item"><i class="bi bi-people"></i> Users</a>
+    <a href="profile.html" class="nav-item"><i class="bi bi-person-circle"></i> My Profile</a>
+    <a href="login.html" class="nav-item danger" style="margin-top:4px"><i class="bi bi-box-arrow-left"></i> Logout</a>
+  </nav>
+  <div class="sidebar-footer"><div class="user-av">A</div><div><div class="user-name">System Admin</div><div class="user-role">Admin</div></div></div>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <div class="topbar-left"><h1 class="page-title">Sales Report</h1></div>
+    <div class="topbar-right"><span class="topbar-date"><i class="bi bi-calendar3" style="margin-right:5px;opacity:.5"></i><span id="topbarDate"></span></span><span class="role-badge role-admin">Admin</span></div>
+  </header>
+  <div class="page-body">
+
+    <div class="card" style="margin-bottom:18px"><div class="card-body" style="padding:14px 18px">
+      <form style="display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap">
+        <div><label class="form-label" style="margin-bottom:5px">From</label><input type="date" class="form-control" style="width:165px"></div>
+        <div><label class="form-label" style="margin-bottom:5px">To</label><input type="date" class="form-control" style="width:165px"></div>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Filter</button>
+      </form>
+    </div></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px"><div class="stat-label">Invoices</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:24px;color:var(--accent)">12</div></div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px"><div class="stat-label">Revenue</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--green)">৳1,84,500</div></div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px"><div class="stat-label">COGS</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--red)">৳1,41,700</div></div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px"><div class="stat-label">Gross Profit</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--yellow)">৳42,800</div></div>
+    </div>
+    <div class="card"><div class="card-header"><div class="card-title"><i class="bi bi-graph-up"></i> Sales Data</div></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Invoice</th><th>Customer</th><th>Date</th><th>Revenue</th><th>COGS</th><th>Profit</th><th>By</th></tr></thead><tbody>
+      <tr><td style="color:var(--accent);font-family:'Syne',sans-serif;font-size:12px">SI-20250601-001</td><td>Rahim Traders</td><td style="color:var(--text3)">2025-06-01</td><td style="font-weight:600">৳12,500</td><td style="color:var(--text3)">৳9,700</td><td style="color:var(--green);font-weight:700">৳2,800</td><td style="color:var(--text3);font-size:12px">Admin</td></tr>
+      <tr><td style="color:var(--accent);font-family:'Syne',sans-serif;font-size:12px">SI-20250601-002</td><td>Karim Store</td><td style="color:var(--text3)">2025-06-01</td><td style="font-weight:600">৳8,200</td><td style="color:var(--text3)">৳6,560</td><td style="color:var(--green);font-weight:700">৳1,640</td><td style="color:var(--text3);font-size:12px">Manager</td></tr>
+    </tbody></table></div></div>
+  </div>
+</div>
+</div>
+<script src="../js/app.js" defer></script>
+</body>
+</html>

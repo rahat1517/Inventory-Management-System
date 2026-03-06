@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Purchase — InventoryPro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="brand-icon"><i class="bi bi-boxes"></i></div><div><div class="brand-name">InventoryPro</div><div class="brand-sub">Management System</div></div></div>
+  <nav class="nav-wrap">
+    <div class="nav-label">Main</div><a href="dashboard.html" class="nav-item"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <div class="nav-label">Inventory</div>
+    <a href="products.html" class="nav-item"><i class="bi bi-box-seam"></i> Products</a>
+    <a href="categories.html" class="nav-item"><i class="bi bi-tag"></i> Categories</a>
+    <a href="suppliers.html" class="nav-item"><i class="bi bi-truck"></i> Suppliers</a>
+    <div class="nav-label">Transactions</div>
+    <a href="purchases.html" class="nav-item active"><i class="bi bi-cart-plus"></i> Purchases</a>
+    <a href="sales.html" class="nav-item"><i class="bi bi-receipt"></i> Sales</a>
+    <div class="nav-label">Reports</div>
+    <a href="report-sales.html" class="nav-item"><i class="bi bi-graph-up"></i> Sales Report</a>
+    <a href="report-profit.html" class="nav-item"><i class="bi bi-currency-dollar"></i> Profit Report</a>
+    <a href="report-stock.html" class="nav-item"><i class="bi bi-bar-chart-line"></i> Stock Report</a>
+    <div class="nav-label">System</div>
+    <a href="alerts.html" class="nav-item"><i class="bi bi-bell"></i> Low Stock Alerts <span class="nav-badge">3</span></a>
+    <a href="users.html" class="nav-item"><i class="bi bi-people"></i> Users</a>
+    <a href="profile.html" class="nav-item"><i class="bi bi-person-circle"></i> My Profile</a>
+    <a href="login.html" class="nav-item danger" style="margin-top:4px"><i class="bi bi-box-arrow-left"></i> Logout</a>
+  </nav>
+  <div class="sidebar-footer"><div class="user-av">A</div><div><div class="user-name">System Admin</div><div class="user-role">Admin</div></div></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <div class="topbar-left"><h1 class="page-title">New Purchase Invoice</h1></div>
+    <div class="topbar-right"><span class="topbar-date"><i class="bi bi-calendar3" style="margin-right:5px;opacity:.5"></i><span id="topbarDate"></span></span><span class="role-badge role-admin">Admin</span></div>
+  </header>
+  <div class="page-body">
+
+    <!-- PHP e: action="<?= BASE_URL ?>/public/index.php?page=purchases&action=store" method="POST" -->
+    <form>
+
+      <!-- Invoice Header -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><i class="bi bi-cart-plus"></i> Invoice Header</div>
+          <a href="purchases.html" class="btn btn-ghost btn-sm"><i class="bi bi-arrow-left"></i> Back</a>
+        </div>
+        <div class="card-body">
+          <div class="form-row col-4">
+            <div class="form-group">
+              <label class="form-label">Invoice No</label>
+              <!-- PHP: value="<?= $invoiceNo ?>" -->
+              <input type="text" name="invoice_no" class="form-control" value="PI-20250604-001">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Supplier *</label>
+              <select name="supplier_id" class="form-select">
+                <option value="">— Select —</option>
+                <!-- PHP: foreach($suppliers as $s): -->
+                <option value="1">TechSource Ltd</option>
+                <option value="2">OfficeWorld</option>
+                <option value="3">Fashion Hub</option>
+                <!-- PHP: endforeach -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Invoice Date *</label>
+              <input type="date" name="invoice_date" class="form-control today">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Note</label>
+              <input type="text" name="note" class="form-control" placeholder="Optional">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Line Items -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><i class="bi bi-list-ul"></i> Purchase Items</div>
+          <button type="button" onclick="addPurchaseRow()" class="btn btn-success btn-sm">
+            <i class="bi bi-plus-lg"></i> Add Row
+          </button>
+        </div>
+        <div class="table-wrap">
+          <table class="invoice-table">
+            <thead>
+              <tr>
+                <th style="width:38%">Product</th>
+                <th style="width:14%">Quantity</th>
+                <th style="width:18%">Unit Cost (৳)</th>
+                <th style="width:18%">Line Total (৳)</th>
+                <th style="width:12%">Remove</th>
+              </tr>
+            </thead>
+            <tbody id="purchaseRows">
+              <tr class="purchase-row">
+                <td>
+                  <select name="product_id[]" class="form-select" onchange="purchaseProductChange(this)">
+                    <option value="">— Select Product —</option>
+                    <!-- PHP: foreach($products as $p): -->
+                    <option value="1" data-cost="38200">Samsung 55" Smart TV (0 in stock)</option>
+                    <option value="2" data-cost="54500">HP Laptop Core i5 (2 in stock)</option>
+                    <option value="3" data-cost="360">A4 Paper Ream (8 in stock)</option>
+                    <option value="4" data-cost="580">Men's Cotton Shirt (120 in stock)</option>
+                    <!-- PHP: endforeach -->
+                  </select>
+                </td>
+                <td><input type="number" name="quantity[]" class="form-control row-qty" min="1" value="1" oninput="calcPurchaseRow(this)"></td>
+                <td><input type="number" name="unit_cost[]" class="form-control row-cost" step="0.01" min="0" value="0.00" oninput="calcPurchaseRow(this)"></td>
+                <td><input type="text" class="form-control row-total" readonly value="0.00" style="color:var(--green);font-weight:600"></td>
+                <td>
+                  <button type="button" class="btn btn-danger btn-sm btn-icon" onclick="removePurchaseRow(this)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="totals-strip">
+          <div class="total-block">
+            <div class="total-label">Grand Total</div>
+            <div class="total-value" style="color:var(--accent)" id="purchaseGrandTotal">৳0.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px">
+        <button type="submit" class="btn btn-primary"><i class="bi bi-save2"></i> Save Invoice</button>
+        <a href="purchases.html" class="btn btn-ghost">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+</div>
+<script src="../js/app.js" defer></script>
+</body>
+</html>

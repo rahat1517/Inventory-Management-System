@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Product — InventoryPro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="brand-icon"><i class="bi bi-boxes"></i></div><div><div class="brand-name">InventoryPro</div><div class="brand-sub">Management System</div></div></div>
+  <nav class="nav-wrap">
+    <div class="nav-label">Main</div>
+    <a href="dashboard.html" class="nav-item"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <div class="nav-label">Inventory</div>
+    <a href="products.html" class="nav-item active"><i class="bi bi-box-seam"></i> Products</a>
+    <a href="categories.html" class="nav-item"><i class="bi bi-tag"></i> Categories</a>
+    <a href="suppliers.html" class="nav-item"><i class="bi bi-truck"></i> Suppliers</a>
+    <div class="nav-label">Transactions</div>
+    <a href="purchases.html" class="nav-item"><i class="bi bi-cart-plus"></i> Purchases</a>
+    <a href="sales.html" class="nav-item"><i class="bi bi-receipt"></i> Sales</a>
+    <div class="nav-label">Reports</div>
+    <a href="report-sales.html" class="nav-item"><i class="bi bi-graph-up"></i> Sales Report</a>
+    <a href="report-profit.html" class="nav-item"><i class="bi bi-currency-dollar"></i> Profit Report</a>
+    <a href="report-stock.html" class="nav-item"><i class="bi bi-bar-chart-line"></i> Stock Report</a>
+    <div class="nav-label">System</div>
+    <a href="alerts.html" class="nav-item"><i class="bi bi-bell"></i> Low Stock Alerts <span class="nav-badge">3</span></a>
+    <a href="users.html" class="nav-item"><i class="bi bi-people"></i> Users</a>
+    <a href="profile.html" class="nav-item"><i class="bi bi-person-circle"></i> My Profile</a>
+    <a href="login.html" class="nav-item danger" style="margin-top:4px"><i class="bi bi-box-arrow-left"></i> Logout</a>
+  </nav>
+  <div class="sidebar-footer"><div class="user-av">A</div><div><div class="user-name">System Admin</div><div class="user-role">Admin</div></div></div>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <div class="topbar-left"><h1 class="page-title">Edit Product</h1></div>
+    <div class="topbar-right"><span class="topbar-date"><i class="bi bi-calendar3" style="margin-right:5px;opacity:.5"></i><span id="topbarDate"></span></span><span class="role-badge role-admin">Admin</span></div>
+  </header>
+  <div class="page-body">
+
+    <div style="max-width:660px;margin:0 auto">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><i class="bi bi-pencil-square"></i> Edit Product</div>
+        <a href="products.html" class="btn btn-ghost btn-sm"><i class="bi bi-arrow-left"></i> Back</a>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-row col-2">
+            <div class="form-group"><label class="form-label">Product Name *</label><input class="form-control" value="Samsung 55&quot; Smart TV" required></div>
+            <div class="form-group"><label class="form-label">SKU Code *</label><input class="form-control" value="ELEC-001" required></div>
+          </div>
+          <div class="form-row col-2">
+            <div class="form-group"><label class="form-label">Category</label>
+              <select class="form-select"><option selected>Electronics</option><option>Clothing</option></select>
+            </div>
+            <div class="form-group"><label class="form-label">Unit</label>
+              <select class="form-select"><option selected>pcs</option><option>kg</option></select>
+            </div>
+          </div>
+          <div class="form-row col-2">
+            <div class="form-group"><label class="form-label">Selling Price (৳) *</label><input class="form-control" value="45000"></div>
+            <div class="form-group"><label class="form-label">Low Stock Qty</label><input class="form-control" value="5"></div>
+          </div>
+          <div class="info-strip">
+            <div><div class="info-item-label">Current Stock</div><div class="info-item-value" style="color:var(--red)">0 pcs</div></div>
+            <div><div class="info-item-label">Avg Cost (WAC)</div><div class="info-item-value">৳38,200.0000</div></div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button type="submit" class="btn btn-warning"><i class="bi bi-save"></i> Update Product</button>
+            <a href="products.html" class="btn btn-ghost">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="../js/app.js" defer></script>
+</body>
+</html>

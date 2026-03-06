@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile — InventoryPro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="brand-icon"><i class="bi bi-boxes"></i></div><div><div class="brand-name">InventoryPro</div><div class="brand-sub">Management System</div></div></div>
+  <nav class="nav-wrap">
+    <div class="nav-label">Main</div>
+    <a href="dashboard.html" class="nav-item"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <div class="nav-label">Inventory</div>
+    <a href="products.html" class="nav-item"><i class="bi bi-box-seam"></i> Products</a>
+    <a href="categories.html" class="nav-item"><i class="bi bi-tag"></i> Categories</a>
+    <a href="suppliers.html" class="nav-item"><i class="bi bi-truck"></i> Suppliers</a>
+    <div class="nav-label">Transactions</div>
+    <a href="purchases.html" class="nav-item"><i class="bi bi-cart-plus"></i> Purchases</a>
+    <a href="sales.html" class="nav-item"><i class="bi bi-receipt"></i> Sales</a>
+    <div class="nav-label">Reports</div>
+    <a href="report-sales.html" class="nav-item"><i class="bi bi-graph-up"></i> Sales Report</a>
+    <a href="report-profit.html" class="nav-item"><i class="bi bi-currency-dollar"></i> Profit Report</a>
+    <a href="report-stock.html" class="nav-item"><i class="bi bi-bar-chart-line"></i> Stock Report</a>
+    <div class="nav-label">System</div>
+    <a href="alerts.html" class="nav-item"><i class="bi bi-bell"></i> Low Stock Alerts <span class="nav-badge">3</span></a>
+    <a href="users.html" class="nav-item"><i class="bi bi-people"></i> Users</a>
+    <a href="profile.html" class="nav-item active"><i class="bi bi-person-circle"></i> My Profile</a>
+    <a href="login.html" class="nav-item danger" style="margin-top:4px"><i class="bi bi-box-arrow-left"></i> Logout</a>
+  </nav>
+  <div class="sidebar-footer"><div class="user-av">A</div><div><div class="user-name">System Admin</div><div class="user-role">Admin</div></div></div>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <div class="topbar-left"><h1 class="page-title">My Profile</h1></div>
+    <div class="topbar-right"><span class="topbar-date"><i class="bi bi-calendar3" style="margin-right:5px;opacity:.5"></i><span id="topbarDate"></span></span><span class="role-badge role-admin">Admin</span></div>
+  </header>
+  <div class="page-body">
+
+    <div style="max-width:540px;margin:0 auto">
+    <div class="card"><div class="card-header"><div class="card-title"><i class="bi bi-person-circle"></i> My Profile</div></div><div class="card-body">
+      <div style="display:flex;align-items:center;gap:16px;padding:16px;background:var(--bg3);border-radius:12px;border:1px solid var(--border);margin-bottom:22px">
+        <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#c084fc);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:#fff">A</div>
+        <div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--text)">System Admin</div><div style="font-size:12px;color:var(--text3);margin-top:2px">admin@inventory.com</div><span class="badge badge-danger" style="margin-top:6px;display:inline-flex">Admin</span></div>
+      </div>
+      <form>
+        <div class="form-row col-2">
+          <div class="form-group"><label class="form-label">Full Name *</label><input class="form-control" value="System Admin"></div>
+          <div class="form-group"><label class="form-label">Email *</label><input class="form-control" value="admin@inventory.com"></div>
+        </div>
+        <div class="divider"></div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;margin-bottom:14px">Change Password <span style="font-size:12px;color:var(--text3);font-weight:400">(leave blank to keep)</span></div>
+        <div class="form-row col-2">
+          <div class="form-group"><label class="form-label">Current Password</label><input type="password" class="form-control"></div>
+          <div class="form-group"><label class="form-label">New Password</label><input type="password" class="form-control"></div>
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Save Changes</button>
+      </form>
+    </div></div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="../js/app.js" defer></script>
+</body>
+</html>

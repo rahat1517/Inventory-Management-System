@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Report — InventoryPro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="brand-icon"><i class="bi bi-boxes"></i></div><div><div class="brand-name">InventoryPro</div><div class="brand-sub">Management System</div></div></div>
+  <nav class="nav-wrap">
+    <div class="nav-label">Main</div>
+    <a href="dashboard.html" class="nav-item"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <div class="nav-label">Inventory</div>
+    <a href="products.html" class="nav-item"><i class="bi bi-box-seam"></i> Products</a>
+    <a href="categories.html" class="nav-item"><i class="bi bi-tag"></i> Categories</a>
+    <a href="suppliers.html" class="nav-item"><i class="bi bi-truck"></i> Suppliers</a>
+    <div class="nav-label">Transactions</div>
+    <a href="purchases.html" class="nav-item"><i class="bi bi-cart-plus"></i> Purchases</a>
+    <a href="sales.html" class="nav-item"><i class="bi bi-receipt"></i> Sales</a>
+    <div class="nav-label">Reports</div>
+    <a href="report-sales.html" class="nav-item"><i class="bi bi-graph-up"></i> Sales Report</a>
+    <a href="report-profit.html" class="nav-item"><i class="bi bi-currency-dollar"></i> Profit Report</a>
+    <a href="report-stock.html" class="nav-item active"><i class="bi bi-bar-chart-line"></i> Stock Report</a>
+    <div class="nav-label">System</div>
+    <a href="alerts.html" class="nav-item"><i class="bi bi-bell"></i> Low Stock Alerts <span class="nav-badge">3</span></a>
+    <a href="users.html" class="nav-item"><i class="bi bi-people"></i> Users</a>
+    <a href="profile.html" class="nav-item"><i class="bi bi-person-circle"></i> My Profile</a>
+    <a href="login.html" class="nav-item danger" style="margin-top:4px"><i class="bi bi-box-arrow-left"></i> Logout</a>
+  </nav>
+  <div class="sidebar-footer"><div class="user-av">A</div><div><div class="user-name">System Admin</div><div class="user-role">Admin</div></div></div>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <div class="topbar-left"><h1 class="page-title">Stock Report</h1></div>
+    <div class="topbar-right"><span class="topbar-date"><i class="bi bi-calendar3" style="margin-right:5px;opacity:.5"></i><span id="topbarDate"></span></span><span class="role-badge role-admin">Admin</span></div>
+  </header>
+  <div class="page-body">
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px"><div class="stat-label">Total Products</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:26px;color:var(--accent)">5</div></div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px"><div class="stat-label">Out of Stock</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:26px;color:var(--red)">1</div></div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px"><div class="stat-label">Low Stock</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:26px;color:var(--yellow)">2</div></div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px"><div class="stat-label">Inventory Value</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--green)">৳5,78,980</div></div>
+    </div>
+    <div class="card"><div class="card-header"><div class="card-title"><i class="bi bi-boxes"></i> Current Stock Levels</div><span style="font-size:12px;color:var(--text3)">As of today</span></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>SKU</th><th>Product</th><th>Category</th><th style="text-align:right">Stock</th><th style="text-align:right">Min</th><th style="text-align:right">Avg Cost</th><th style="text-align:right">Value</th><th>Status</th></tr></thead><tbody>
+      <tr><td><code>ELEC-001</code></td><td style="font-weight:500;color:var(--text)">Samsung 55" TV</td><td style="color:var(--text3)">Electronics</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--red)">0</td><td style="text-align:right;color:var(--text3)">5</td><td style="text-align:right;color:var(--text3)">৳38,200</td><td style="text-align:right;font-weight:600">৳0</td><td><span class="badge badge-danger">Out of Stock</span></td></tr>
+      <tr><td><code>ELEC-002</code></td><td style="font-weight:500;color:var(--text)">HP Laptop i5</td><td style="color:var(--text3)">Electronics</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--yellow)">2</td><td style="text-align:right;color:var(--text3)">10</td><td style="text-align:right;color:var(--text3)">৳54,500</td><td style="text-align:right;font-weight:600">৳1,09,000</td><td><span class="badge badge-warning">Low Stock</span></td></tr>
+      <tr><td><code>CLTH-001</code></td><td style="font-weight:500;color:var(--text)">Men's Cotton Shirt</td><td style="color:var(--text3)">Clothing</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--green)">120</td><td style="text-align:right;color:var(--text3)">15</td><td style="text-align:right;color:var(--text3)">৳580</td><td style="text-align:right;font-weight:600">৳69,600</td><td><span class="badge badge-success">In Stock</span></td></tr>
+      <tr><td><code>ELEC-003</code></td><td style="font-weight:500;color:var(--text)">Walton Refrigerator</td><td style="color:var(--text3)">Electronics</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--green)">15</td><td style="text-align:right;color:var(--text3)">5</td><td style="text-align:right;color:var(--text3)">৳26,500</td><td style="text-align:right;font-weight:600">৳3,97,500</td><td><span class="badge badge-success">In Stock</span></td></tr>
+    </tbody><tfoot><tr><td colspan="6" style="text-align:right;font-family:'Syne',sans-serif;font-weight:600">Total Value:</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:var(--green)">৳5,78,980</td><td></td></tr></tfoot></table></div></div>
+  </div>
+</div>
+</div>
+<script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Low Stock Alerts — InventoryPro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="brand-icon"><i class="bi bi-boxes"></i></div><div><div class="brand-name">InventoryPro</div><div class="brand-sub">Management System</div></div></div>
+  <nav class="nav-wrap">
+    <div class="nav-label">Main</div>
+    <a href="dashboard.html" class="nav-item"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <div class="nav-label">Inventory</div>
+    <a href="products.html" class="nav-item"><i class="bi bi-box-seam"></i> Products</a>
+    <a href="categories.html" class="nav-item"><i class="bi bi-tag"></i> Categories</a>
+    <a href="suppliers.html" class="nav-item"><i class="bi bi-truck"></i> Suppliers</a>
+    <div class="nav-label">Transactions</div>
+    <a href="purchases.html" class="nav-item"><i class="bi bi-cart-plus"></i> Purchases</a>
+    <a href="sales.html" class="nav-item"><i class="bi bi-receipt"></i> Sales</a>
+    <div class="nav-label">Reports</div>
+    <a href="report-sales.html" class="nav-item"><i class="bi bi-graph-up"></i> Sales Report</a>
+    <a href="report-profit.html" class="nav-item"><i class="bi bi-currency-dollar"></i> Profit Report</a>
+    <a href="report-stock.html" class="nav-item"><i class="bi bi-bar-chart-line"></i> Stock Report</a>
+    <div class="nav-label">System</div>
+    <a href="alerts.html" class="nav-item active"><i class="bi bi-bell"></i> Low Stock Alerts <span class="nav-badge">3</span></a>
+    <a href="users.html" class="nav-item"><i class="bi bi-people"></i> Users</a>
+    <a href="profile.html" class="nav-item"><i class="bi bi-person-circle"></i> My Profile</a>
+    <a href="login.html" class="nav-item danger" style="margin-top:4px"><i class="bi bi-box-arrow-left"></i> Logout</a>
+  </nav>
+  <div class="sidebar-footer"><div class="user-av">A</div><div><div class="user-name">System Admin</div><div class="user-role">Admin</div></div></div>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <div class="topbar-left"><h1 class="page-title">Low Stock Alerts</h1></div>
+    <div class="topbar-right"><span class="topbar-date"><i class="bi bi-calendar3" style="margin-right:5px;opacity:.5"></i><span id="topbarDate"></span></span><span class="role-badge role-admin">Admin</span></div>
+  </header>
+  <div class="page-body">
+
+    <div class="alert-box alert-danger">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      <div><strong>3 products</strong> need immediate restocking.
+        <a href="purchase-create.html" style="color:inherit;font-weight:600;margin-left:8px;text-decoration:underline">Create Purchase Order →</a>
+      </div>
+    </div>
+    <div class="card"><div class="card-header"><div class="card-title" style="--accent:var(--red)"><i class="bi bi-bell-fill"></i> Products Needing Restock</div></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Product</th><th>SKU</th><th>Category</th><th>Stock</th><th>Min Required</th><th>Shortage</th><th>Status</th><th>History</th></tr></thead><tbody>
+      <tr><td style="font-weight:500;color:var(--text)">Samsung 55" TV</td><td><code>ELEC-001</code></td><td style="color:var(--text3)">Electronics</td><td><span class="badge badge-danger" style="font-family:'Syne',sans-serif;font-size:13px">0 pcs</span></td><td style="color:var(--text3)">5 pcs</td><td style="font-family:'Syne',sans-serif;font-weight:700;color:var(--red)">-5 pcs</td><td><span class="badge badge-danger"><i class="bi bi-x-circle"></i> OUT OF STOCK</span></td><td><a href="product-ledger.html" class="btn btn-ghost btn-sm btn-icon"><i class="bi bi-journal-text"></i></a></td></tr>
+      <tr><td style="font-weight:500;color:var(--text)">HP Laptop i5</td><td><code>ELEC-002</code></td><td style="color:var(--text3)">Electronics</td><td><span class="badge badge-warning" style="font-family:'Syne',sans-serif;font-size:13px">2 pcs</span></td><td style="color:var(--text3)">10 pcs</td><td style="font-family:'Syne',sans-serif;font-weight:700;color:var(--red)">-8 pcs</td><td><span class="badge badge-warning"><i class="bi bi-exclamation-triangle"></i> LOW STOCK</span></td><td><a href="product-ledger.html" class="btn btn-ghost btn-sm btn-icon"><i class="bi bi-journal-text"></i></a></td></tr>
+      <tr><td style="font-weight:500;color:var(--text)">A4 Paper Ream</td><td><code>STAT-001</code></td><td style="color:var(--text3)">Stationery</td><td><span class="badge badge-warning" style="font-family:'Syne',sans-serif;font-size:13px">8 ream</span></td><td style="color:var(--text3)">20 ream</td><td style="font-family:'Syne',sans-serif;font-weight:700;color:var(--red)">-12 ream</td><td><span class="badge badge-warning"><i class="bi bi-exclamation-triangle"></i> LOW STOCK</span></td><td><a href="product-ledger.html" class="btn btn-ghost btn-sm btn-icon"><i class="bi bi-journal-text"></i></a></td></tr>
+    </tbody></table></div></div>
+  </div>
+</div>
+</div>
+<script src="../js/app.js" defer></script>
+</body>
+</html>
